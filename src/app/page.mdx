@@ -1,42 +1,12 @@
-import { Guides } from '@/components/Guides'
-import { Resources } from '@/components/Resources'
-import { HeroPattern } from '@/components/HeroPattern'
-
 export const metadata = {
   title: 'MonoBible | Read the Bible without distraction.',
   description: 'Read the Bible without distraction.',
 }
 
-export const sections = [
-  { title: 'Guides', id: 'guides' },
-  { title: 'Resources', id: 'resources' },
-]
-
-{/* <HeroPattern /> */}
-
 # Welcome to MonoBible
 
 A simple Bible in monospace type where less is more. {{ className: 'lead' }}
 
-<div className="not-prose mb-16 mt-6 flex gap-3">
-  <Button href="/quickstart" arrow="right">
-    <>Quickstart</>
-  </Button>
-  <Button href="/sdks" variant="outline">
-    <>Explore SDKs</>
-  </Button>
-</div>
-
 ## Why? {{ anchor: false }}
 
 MonoBible has no verses or annotation. It is designed for uninterrupted, uncluttered, unadorned reading. {{ className: 'lead' }}
-
-<div className="not-prose">
-  <Button href="/sdks" variant="text" arrow="right">
-    <>Get your API key</>
-  </Button>
-</div>
-{/*
-<Guides />
-
-<Resources /> */}
