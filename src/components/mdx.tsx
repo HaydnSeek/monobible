@@ -1,3 +1,4 @@
+'use client'
 import Link from 'next/link'
 import clsx from 'clsx'
 
@@ -8,10 +9,11 @@ import { Prose } from '@/components/Prose'
 export const a = Link
 export { Button } from '@/components/Button'
 export { CodeGroup, Code as code, Pre as pre } from '@/components/Code'
+import { handleClick } from './JumpTo'
 
 export function wrapper({ children }: { children: React.ReactNode }) {
   return (
-    <article className="flex h-full flex-col pb-10 pt-16">
+    <article className="flex h-full flex-col pb-10 pt-8 md:pt-16">
       <Prose className="flex-auto">{children}</Prose>
       {/* <footer className="mx-auto mt-16 w-full max-w-2xl lg:max-w-5xl">
         <Feedback />
@@ -123,5 +125,32 @@ export function Property({
         </dd>
       </dl>
     </li>
+  )
+}
+
+export const ChapterGrid = ({ count }: { count: number }) => {
+  return (
+    <div
+      style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(50px, 1fr))',
+        gap: '5px',
+        marginTop: '24px',
+      }}
+    >
+      {Array.from({ length: count }, (_, i) => i + 1).map((number) => (
+        <button
+          key={number}
+          onClick={() => handleClick(number)}
+          style={{
+            padding: '10px',
+            border: '1px solid black',
+            cursor: 'pointer',
+          }}
+        >
+          {number}
+        </button>
+      ))}
+    </div>
   )
 }
